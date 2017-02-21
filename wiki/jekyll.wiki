@@ -1,0 +1,8 @@
+jekyll
+    https://github.com/jekyll/jekyll/wiki/Configuration
+
+liquid
+    https://github.com/shopify/liquid/wiki/liquid-for-designers
+
+blog
+    http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html

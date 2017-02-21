@@ -1,0 +1,45 @@
+# Site settings
+title: Land - MLer
+description: "A blog about Land@ML..."
+baseurl: "/blog"
+url: "http://gnudennis.github.io"
+# User settings
+username: land@ml
+user_title: Land - MLer
+email: gnudennis@qq.com
+twitter_username: loremipsum
+github_username:  gnudennis
+gplus_username:  gnudennis
+disqus_username: gnudennis
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+links:
+  - title: home
+    url: /
+  - title: my posts
+    url: /posts
+  - title: series
+    url: /series
+  - title: tags
+    url: /tags
+  - title: about me
+    url: /about
+# projects in header index
+#projects:
+#  - name: asciilang
+#    url: https://github.com/victorvoid/asciilang
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
