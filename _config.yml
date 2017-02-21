@@ -1,7 +1,7 @@
 # Site settings
 title: Land - MLer
 description: "A blog about Land@ML..."
-baseurl: "/blog"
+baseurl: "/land-ml"
 url: "http://gnudennis.github.io"
 # User settings
 username: land@ml
