@@ -29,10 +29,6 @@ serie: spark
 ### 交互式执行
 spark 提供了各种语言的 shell。对于 python，只需要执行 `./bin/pyspark` 即可。
 
-    Spark’s primary abstraction is a distributed collection of items called a Resilient Distributed Dataset (RDD). RDDs can be created from Hadoop InputFormats (such as HDFS files) or by transforming other RDDs. Let’s make a new RDD from the text of the README file in the Spark source directory:    
-
-
-
 ### 执行代码
 pyspark 的 demo 位于`/examples/src/main/python/`。
 
@@ -48,4 +44,36 @@ public class A {
 
 ```
 
-### 
+## Spark 基本概念
+
+### RDD
+
+    Spark’s primary abstraction is a distributed collection of items called a Resilient Distributed Dataset (RDD). RDDs can be created from Hadoop InputFormats (such as HDFS files) or by transforming other RDDs. Let’s make a new RDD from the text of the README file in the Spark source directory:    
+
+
+
+## Lorem ipsum dolor sit amet,res.
+
+
+{% highlight javascript %}
+use admin
+db.createUser{
+    user: "bonitao",
+    pwd: "2016bonitao",
+    roles: [{role: "userAdminAnyDatabase", db: "admin"}]
+}
+{% endhighlight %}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque asperiores quam fuga tempora nisi consequatur, sequi cum voluptate deleniti quis, perspiciatis commodi beatae modi, iusto ab deserunt corrupti libero doloribus.
+
+{% highlight javascript %}
+
+db.updateUser("bonitao",
+{
+    pwd: "2016bonitao",
+    roles: [{role: "read", db: "assets"}]
+})
+
+{% endhighlight %}
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni assumenda perferendis, iure atque. Tempore qui blanditiis autem necessitatibus natus soluta voluptas saepe totam animi voluptatum recusandae, nihil maiores et cumque. 
