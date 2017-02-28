@@ -34,16 +34,6 @@ pyspark 的 demo 位于`/examples/src/main/python/`。
 
     ./bin/spark-submit ../examples/src/main/python/pi.py 10
 
-
-```Java
-public class A {
-    public static void main() {
-        return 0;
-    }
-}
-
-```
-
 ## Spark 基本概念
 
 ### RDD
