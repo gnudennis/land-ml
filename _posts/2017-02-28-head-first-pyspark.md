@@ -38,32 +38,38 @@ pyspark 的 demo 位于`/examples/src/main/python/`。
 
 ### RDD
 
-    Spark’s primary abstraction is a distributed collection of items called a Resilient Distributed Dataset (RDD). RDDs can be created from Hadoop InputFormats (such as HDFS files) or by transforming other RDDs. Let’s make a new RDD from the text of the README file in the Spark source directory:    
+    Spark’s primary abstraction is a distributed collection of items called a Resilient Distributed Dataset (RDD). RDDs can be created from Hadoop InputFormats (such as HDFS files) or by transforming other RDDs. Let’s make a new RDD from the text of the pi.py file in the Spark source directory:    
+
+**Create RDD**
+```Python
+textFile = sc.textFile('pi.py')
+textFile.count()
+textFile.first()
+```
+
+**Transforming RDD**
+```Python
+lineWithRandom = textFile.filter(lambda line: "random" in line)
+lineWithRandom.count()
+lineWithRandom.first()
+```
+
+### MapReduce
+Demo: 
+```Python
+textFile.map(lambda line: len(line.split())).reduce(lambda a, b: a if (a > b) else b)
+```
+
+`.map()` 将行与单词数关联，并且产生新的 `RDD`。 `.reduce` 作用于此 `RDD`, 最终算出最大单词数。 
+
+`MapReduce` 是一种常见的数据流模式(Data Flow Pattern), Spark 可以很容易实现 `MapReudce`。
+
+```Python
+wordCounts = textFile.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a+b)
+
+wordCounts.collect()
+```
+
+### Caching 
 
 
-
-## Lorem ipsum dolor sit amet,res.
-
-
-{% highlight javascript %}
-use admin
-db.createUser{
-    user: "bonitao",
-    pwd: "2016bonitao",
-    roles: [{role: "userAdminAnyDatabase", db: "admin"}]
-}
-{% endhighlight %}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque asperiores quam fuga tempora nisi consequatur, sequi cum voluptate deleniti quis, perspiciatis commodi beatae modi, iusto ab deserunt corrupti libero doloribus.
-
-{% highlight javascript %}
-
-db.updateUser("bonitao",
-{
-    pwd: "2016bonitao",
-    roles: [{role: "read", db: "assets"}]
-})
-
-{% endhighlight %}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni assumenda perferendis, iure atque. Tempore qui blanditiis autem necessitatibus natus soluta voluptas saepe totam animi voluptatum recusandae, nihil maiores et cumque. 
