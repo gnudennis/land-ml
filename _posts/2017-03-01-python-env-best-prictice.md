@@ -75,7 +75,7 @@ Anaconda 集成了 Conda,  Conda 解决了Python的不同版本隔离（环境�
 
 #### 环境管理
 
-``` shell
+```shell
 # 创建 python27 的环境，conda 自动搜索2.7最新版本
 conda create --name python27 python=2.7
 
@@ -103,7 +103,58 @@ root                  *  /Users/fandennis/anaconda
 
 #### 包管理
 
+```shell
+# conda 远程搜索 pip 信息与依赖
+conda install pip
 
+# 安装 package
+conda install -n python27 pip
+
+# 安装 anaconda package sets
+conda install anaconda
+
+# 创建是安装 anaconda package sets
+conda create -n python27 python=2.7 anaconda
+
+# 更新package
+conda update -n python27 pip
+
+# 删除package
+conda remove -n python27 pip
+
+# 查找package信息
+conda search pip
+
+# 查看已安装 packages
+conda list
+
+# 查看指定环境已安装 package
+conda list -n python27
+```
+
+值得注意的是，conda 将 python、conda 本身看成 package，及其方便管理。
+
+#### 添加镜像
+
+``` shell
+# 添加 Anaconda 镜像
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+# 显示通道地址
+conda config --set show_channel_urls yes
+```
+
+可以在 `anaconda` 查看
+
+
+<figure class="foto-legenda">
+    <img src="{{ "/land-ml/assets/img/python/python-env-best-prictice/anaconda-config.png"}}" alt="">
+    <figcaption> <p>aconda 可视化配置</p>
+    </figcaption>
+</figure>
+
+
+to be continued...
 
 
 ## 参考
