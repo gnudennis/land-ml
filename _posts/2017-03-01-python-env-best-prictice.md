@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Python 环境搭建最佳实践"
+title:  "Python环境搭建最佳实践"
 image: ''
 date:   2017-03-01 18:00:00
 tags:
@@ -25,9 +25,9 @@ python 允许多版本共存，并且目前 python 有众多包管理利器，�
 
 以 python2.7 为例，具体步骤：
 
-**1. 删除 Python 2.7 Framework**
+**1.删除 Python 2.7 Framework**
 
-``` shell
+```shell
 ➜ where python
 /usr/bin/python
 /usr/local/bin/python
@@ -35,34 +35,34 @@ python 允许多版本共存，并且目前 python 有众多包管理利器，�
 
 确定删除 `/usr/local/bin/python`。进入 `/usr/local/bin`，确定真身。
 
-{% highlight shell %}
+```shell
 ➜ls -al | grep "python"
 lrwxr-xr-x  1 root       wheel    35B 12  7 10:28 2to3-2 -> ../Cellar/python/2.7.6_1/bin/2to3-2
 lrwxr-xr-x  1 root       wheel    37B 12  7 10:28 2to3-2.7 -> ../Cellar/python/2.7.6_1/bin/2to3-2.7
 lrwxr-xr-x  1 root       wheel    41B 12  7 10:28 easy_install -> ../Cellar/python/2.7.6_1/bin/easy_install
 lrwxr-xr-x  1 root       wheel    45B 12  7 10:28 easy_install-2.7 -> ../Cellar/python/2.7.6_1/bin/easy_install-2.7
-{% endhighlight %}
+```
 
 原来，位于 `../Cellar/python`, 删除之。
 
-{% highlight shell %}
+``` shell
 ➜sudo rm -rf "../Cellar/python/"
-{% endhighlight %}
+```
 
-**2. 清除软链接**
+**2.清除软链接**
 
-{% highlight shell %}
+```shell
 ➜cd /usr/local/bin/python
 ➜ls -al | grep "python"
 ➜sudo rm -rf xxx
-{% endhighlight %}
+```
 
-**3. 清除 相关 profile files 中的 `PATH` 等环境变量。**
+**3.清除 相关 profile files 中的 `PATH` 等环境变量。**
 
 
 ## 二、安装 Anaconda
 
-### 1. Anaconda 是什么？
+### Anaconda 是什么？
 
 <p>     Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.</p>
 
@@ -70,10 +70,38 @@ lrwxr-xr-x  1 root       wheel    45B 12  7 10:28 easy_install-2.7 -> ../Cellar/
 
 <a href="https://www.continuum.io/" target="_blank">Anaconda</a> 其实用于科学计算的 Python 发行版(不仅限于 Python)，集成了100多个科学计算包及其依赖。
 
-### 2. Conda
+### Conda
 Anaconda 集成了 Conda,  Conda 解决了Python的不同版本隔离（环境管理）和包管理。
 
 #### 环境管理
+
+``` shell
+# 创建 python27 的环境，conda 自动搜索2.7最新版本
+conda create --name python27 python=2.7
+
+# 激活 python27 环境
+source activate python27
+变成: 
+(python27) ➜  ~ 
+
+# 回复默认环境
+source deactivate python27
+
+# 删除环境
+conda remove --name python27 --all
+
+# 查看已有环境
+conda info -e
+
+# conda environments:
+#
+python27                 /Users/fandennis/anaconda/envs/python27
+root                  *  /Users/fandennis/anaconda
+```
+
+可以看出安装的 env 都放在 `~/anaconda/envs` 路径下。
+
+#### 包管理
 
 
 
