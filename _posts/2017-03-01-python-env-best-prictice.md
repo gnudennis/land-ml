@@ -163,6 +163,21 @@ conda config --set show_channel_urls yes
 
 to be continued...
 
+## 三、Spark 环境搭建
+
+<a href="http://stackoverflow.com/questions/3819449/how-to-uninstall-python-2-7-on-a-mac-os-x-10-6-4" target="_blank">Spark</a> 安装非常简单，直接解压，just run it。
+按照习惯，在 `/usr/local/bin` 创建一个软链。
+
+```shell
+sudo ln -s /Applications/spark-2.1.0/bin/pyspark pyspark
+```
+
+需要注意的两点：
+1. spark2.1 目前只支持 python2（详见：<a herf="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
+</a>&<a href="https://issues.apache.org/jira/browse/SPARK-19019" target="_blank">PySpark does not work with Python 3.6.0
+</a>）。
+2. 配置 `/ect/hosts` 将本机挂到 localhost 上面去.
+
 
 ## 参考
 1. <a href="http://stackoverflow.com/questions/3819449/how-to-uninstall-python-2-7-on-a-mac-os-x-10-6-4" target="_blank">How to uninstall Python 2.7 on a Mac OS X 10.6.4?</a>
