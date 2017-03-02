@@ -167,11 +167,63 @@ sudo ln -s /Applications/spark-2.1.0/bin/pyspark pyspark
 ```
 
 需要注意的两点：
-1. spark2.1 目前只支持 python2（详见：<a herf="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
+1. spark2.1 目前只支持 python2（详见：<a href="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
 </a>&<a href="https://issues.apache.org/jira/browse/SPARK-19019" target="_blank">PySpark does not work with Python 3.6.0
 </a>）。
 2. 配置 `/ect/hosts` 将本机挂到 localhost 上面去。
 
 
+## 四、Running Spark Applications Using IPython and Jupyter Notebooks
+
+`PYSPARK_PYTHON`: 指定 python 的版本
+`PYSPARK_DRIVER_PYTHON`:指定 python 的 driver
+`PYSPARK_DRIVER_PYTHON_OPTS`: 指定 python 的 driver note
+
+
+``` shell
+PYSPARK_PYTHON=python PYSPARK_DRIVER_PYTHON=ipython PYSPARK_DRIVER_PYTHON_OPTS="notebook" pyspark
+```
+在jupyter notebook 中完美执行。
+
+测试代码：
+
+```python
+%matplotlib inline
+%numpy inline
+
+import numpy as np  
+import matplotlib.pyplot as plt
+
+
+textFile = sc.textFile("test.note")
+textFile.count()
+
+wordCounts = textFile.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a+b)
+wordCountDict = dict(wordCounts.take(10))
+
+bar_width = 0.35  
+opacity = 0.4  
+n_groups = len(wordCountDict.keys())  
+fig, ax = plt.subplots()  
+
+index = np.arange(n_groups)
+print index + bar_width
+
+plt.bar(index, tuple(wordCountDict.values()), bar_width, alpha=opacity, color='b')
+plt.xlabel('Word')  
+plt.ylabel('Count')  
+plt.title('WordCount')  
+plt.xticks(index + bar_width, tuple(wordCountDict.keys()) )  
+plt.ylim(0, 50)
+plt.legend()  
+plt.tight_layout()  
+plt.show()  
+
+```
+
+
+
 ## 参考
 1. <a href="http://stackoverflow.com/questions/3819449/how-to-uninstall-python-2-7-on-a-mac-os-x-10-6-4" target="_blank">How to uninstall Python 2.7 on a Mac OS X 10.6.4?</a>
+2. <a href="http://blog.insightdatalabs.com/jupyter-on-apache-spark-step-by-step/" target="_blank">Using Jupyter on Apache Spark: Step-by-Step with a Terabyte of Reddit Data</a>
+3. <a href="https://www.cloudera.com/documentation/enterprise/5-6-x/topics/spark_ipython.html" target="_blank">Running Spark Applications Using IPython and Jupyter Notebooks</a>
