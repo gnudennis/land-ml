@@ -153,15 +153,9 @@ conda config --set show_channel_urls yes
 
 可以在 `anaconda` 查看
 
+<img src="/land-ml/assets/img/python/python-env-best-prictice/anaconda-config.png">
+<figcaption> <p>aconda 可视化配置</p></figcaption>
 
-<figure class="foto-legenda">
-    <img src="{{ "/land-ml/assets/img/python/python-env-best-prictice/anaconda-config.png"}}" alt="">
-    <figcaption> <p>aconda 可视化配置</p>
-    </figcaption>
-</figure>
-
-
-to be continued...
 
 ## 三、Spark 环境搭建
 
@@ -176,7 +170,7 @@ sudo ln -s /Applications/spark-2.1.0/bin/pyspark pyspark
 1. spark2.1 目前只支持 python2（详见：<a herf="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
 </a>&<a href="https://issues.apache.org/jira/browse/SPARK-19019" target="_blank">PySpark does not work with Python 3.6.0
 </a>）。
-2. 配置 `/ect/hosts` 将本机挂到 localhost 上面去.
+2. 配置 `/ect/hosts` 将本机挂到 localhost 上面去。
 
 
 ## 参考
