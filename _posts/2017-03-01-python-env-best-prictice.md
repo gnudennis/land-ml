@@ -13,7 +13,7 @@ serie: python
 
 <p class="music-read"><a href="https://y.qq.com/n/yqq/song/434676_num.html?ADTAG=h5_playsong&no_redirect=1">Music for reading</a></p>
 
-<img src="/land-ml/assets/img/header/python-env-best-prictise.png.png">
+<img src="/land-ml/assets/img/header/python-env-best-prictise.png">
 
 ## 一、重建 macOS python
 
@@ -72,6 +72,10 @@ lrwxr-xr-x  1 root       wheel    45B 12  7 10:28 easy_install-2.7 -> ../Cellar/
 
 ### 2. Conda
 Anaconda 集成了 Conda,  Conda 解决了Python的不同版本隔离（环境管理）和包管理。
+
+#### 环境管理
+
+
 
 
 ## 参考
