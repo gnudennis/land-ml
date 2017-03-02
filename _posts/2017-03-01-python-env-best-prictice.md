@@ -13,7 +13,7 @@ serie: python
 
 <p class="music-read"><a href="https://y.qq.com/n/yqq/song/434676_num.html?ADTAG=h5_playsong&no_redirect=1">Music for reading</a></p>
 
-<img src="/land-ml/assets/img/mm/python-env-best-prictise.png.png">
+<img src="/land-ml/assets/img/header/python-env-best-prictise.png.png">
 
 ## 一、重建 macOS python
 
