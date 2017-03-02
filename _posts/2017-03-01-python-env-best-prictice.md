@@ -17,9 +17,9 @@ serie: python
 
 ## 本文核心：
 
-一、重建 macOS python
-二、Anaconda 管理 envs & packages
-三、Spark 环境搭建
+* 一、重建 macOS python
+* 二、Anaconda 管理 envs & packages
+* 三、Spark 环境搭建
 
 
 ## 一、重建 macOS python
