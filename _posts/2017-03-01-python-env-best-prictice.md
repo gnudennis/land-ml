@@ -31,7 +31,6 @@ python 允许多版本共存，并且目前 python 有众多包管理利器，�
 ➜ where python
 /usr/bin/python
 /usr/local/bin/python
-{% endhighlight %}
 ```
 
 确定删除 `/usr/local/bin/python`。进入 `/usr/local/bin`，确定真身。
