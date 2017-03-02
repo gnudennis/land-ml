@@ -15,7 +15,7 @@ serie: python
 
 <img src="http://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2016/02/raw.gif">
 
-## 重建 macOS python
+## 一、重建 macOS python
 
 macOS Sierra 自带的版本是 Python2，通常位于 `/usr/bin/python`, 即便是 root 权限，也无法删除。当然，由于诸多系统软件依赖 Python2，也不建议删除。
 
@@ -27,11 +27,12 @@ python 允许多版本共存，并且目前 python 有众多包管理利器，�
 
 1. 删除 Python 2.7 Framework。
 
-{% highlight shell %}
+``` shell
 ➜ where python
 /usr/bin/python
 /usr/local/bin/python
 {% endhighlight %}
+```
 
 确定删除 `/usr/local/bin/python`。进入 `/usr/local/bin`，确定真身。
 
@@ -56,6 +57,26 @@ lrwxr-xr-x  1 root       wheel    45B 12  7 10:28 easy_install-2.7 -> ../Cellar/
 ➜ls -al | grep "python"
 ➜sudo rm -rf xxx
 {% endhighlight %}
+
+3. 清除 相关 profile files 中的 `PATH` 等环境变量。
+
+
+## 二、安装 Anaconda
+
+### 1. Anaconda 是什么？
+
+<p>     Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.</p>
+
+<p>     Additionally, you'll have access to over 720 packages that can easily be installed with conda, our renowned package, dependency and environment manager, that is included in Anaconda. See the packages included with Anaconda and the Anaconda changelog。</p>
+
+<a href="https://www.continuum.io/" target="_blank">Anaconda</a> 其实用于科学计算的 Python 发行版(不仅限于 Python)，集成了100多个科学包及其依赖。
+
+### 2. Conda
+Anaconda 集成了 Conda,  Conda 解决了Python的不同版本隔离（环境管理）和包管理。
+
+
+
+
 
 
 
@@ -83,28 +104,3 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque corporis, fuga s
 3. <a href="http://www.infoq.com/articles/ebay-scalability-best-practices" target="_blank">Scalability Best Practices: Lessons from eBay</a>
 4. <a href="http://stackoverflow.com/questions/5401992/what-does-scale-horizontally-and-scale-vertically-mean" target="_blank">What does scale horizontally and scale vertically mean?</a>
 
-## Lorem ipsum dolor sit amet,res.
-
-
-{% highlight javascript %}
-use admin
-db.createUser{
-	user: "bonitao",
-	pwd: "2016bonitao",
-	roles: [{role: "userAdminAnyDatabase", db: "admin"}]
-}
-{% endhighlight %}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque asperiores quam fuga tempora nisi consequatur, sequi cum voluptate deleniti quis, perspiciatis commodi beatae modi, iusto ab deserunt corrupti libero doloribus.
-
-{% highlight javascript %}
-
-db.updateUser("bonitao",
-{
-	pwd: "2016bonitao",
-	roles: [{role: "read", db: "assets"}]
-})
-
-{% endhighlight %}
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni assumenda perferendis, iure atque. Tempore qui blanditiis autem necessitatibus natus soluta voluptas saepe totam animi voluptatum recusandae, nihil maiores et cumque.
