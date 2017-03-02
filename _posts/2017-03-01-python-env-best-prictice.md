@@ -15,6 +15,13 @@ serie: python
 
 <img src="/land-ml/assets/img/header/python-env-best-prictise.png">
 
+## 本文核心：
+
+一、重建 macOS python
+二、Anaconda 管理 envs & packages
+三、Spark 环境搭建
+
+
 ## 一、重建 macOS python
 
 macOS Sierra 自带的版本是 Python2，通常位于 `/usr/bin/python`, 即便是 root 权限，也无法删除。当然，由于诸多系统软件依赖 Python2，也不建议删除。
