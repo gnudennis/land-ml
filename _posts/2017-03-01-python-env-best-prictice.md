@@ -167,10 +167,11 @@ sudo ln -s /Applications/spark-2.1.0/bin/pyspark pyspark
 ```
 
 需要注意的两点：
-1. spark2.1 目前只支持 python2（详见：<a href="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
+1. Spark runs on Java 7+, Python 2.6+/3.4+。但是 Python 3.6.0 有问题（详见：<a href="http://stackoverflow.com/questions/42349980/unable-to-run-pyspark" target="_blank">Unable to run pyspark
 </a>&<a href="https://issues.apache.org/jira/browse/SPARK-19019" target="_blank">PySpark does not work with Python 3.6.0
 </a>）。
 2. 配置 `/ect/hosts` 将本机挂到 localhost 上面去。
+
 
 
 ## 四、Running Spark Applications Using IPython and Jupyter Notebooks
@@ -185,7 +186,7 @@ PYSPARK_PYTHON=python PYSPARK_DRIVER_PYTHON=ipython PYSPARK_DRIVER_PYTHON_OPTS="
 ```
 在jupyter notebook 中完美执行。
 
-测试代码：
+测试代码：计算词频
 
 ```python
 %matplotlib inline
